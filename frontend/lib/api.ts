@@ -1,4 +1,9 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api/v1";
+let API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api/v1";
+if (API_BASE && !API_BASE.endsWith("/api/v1") && !API_BASE.endsWith("/api/v1/")) {
+  const cleanBase = API_BASE.endsWith("/") ? API_BASE.slice(0, -1) : API_BASE;
+  API_BASE = `${cleanBase}/api/v1`;
+}
+
 
 async function throwApiError(res: Response, context: string): Promise<never> {
   const text = await res.text();
