@@ -6,6 +6,7 @@ Implements cooldown, retry logic, and automatic failover.
 from __future__ import annotations
 
 import os
+import re
 import time
 from datetime import datetime, timedelta
 from typing import Optional
@@ -21,15 +22,26 @@ class KeyRotationManager:
         self.current_index = 0
 
     def _load_keys(self) -> list[str]:
-        """Load API keys from environment (GEMINI_API_KEY_1, GEMINI_API_KEY_2, etc.)."""
+        """Load API keys from environment (GEMINI_API_KEYS, GEMINI_API_KEY_1, GEMINI_API_KEY_2, etc.)."""
         keys = []
-        
-        # Try individual key env vars first
+        seen = set()
+
+        def add_key(value: str) -> None:
+            normalized = value.strip()
+            if normalized and normalized not in seen:
+                seen.add(normalized)
+                keys.append(normalized)
+
+        # Support comma/semicolon/newline-separated list of keys in one env variable
+        raw_keys = os.getenv("GEMINI_API_KEYS", "").strip()
+        if raw_keys:
+            for key in re.split(r"[\n\r,;]+", raw_keys):
+                add_key(key)
+
+        # Try individual key env vars next
         for i in range(1, self.max_keys + 1):
-            key = os.getenv(f"GEMINI_API_KEY_{i}", "").strip()
-            if key:
-                keys.append(key)
-        
+            add_key(os.getenv(f"GEMINI_API_KEY_{i}", ""))
+
         # Fallback to single GEMINI_API_KEY
         if not keys:
             try:
@@ -39,12 +51,12 @@ class KeyRotationManager:
                     keys.append(key.strip())
             except Exception:
                 pass
-            
+
             if not keys:
                 key = os.getenv("GEMINI_API_KEY", "").strip()
                 if key:
                     keys.append(key)
-        
+
         return keys if keys else [""]
 
     def get_next_key(self) -> str:

@@ -9,11 +9,50 @@ logger = logging.getLogger(__name__)
 PROMPT_PATH = Path(__file__).resolve().parents[1] / "prompts" / "counselling_system.txt"
 
 
+def list_api_keys() -> list[str]:
+    """Return all discovered Gemini API keys from environment/settings."""
+    import os
+
+    keys: list[str] = []
+
+    raw = os.getenv("GEMINI_API_KEYS", "") or ""
+    if raw.strip():
+        for key in raw.replace(";", "\n").splitlines():
+            if key.strip():
+                keys.append(key.strip())
+
+    for i in range(1, 21):
+        key = os.getenv(f"GEMINI_API_KEY_{i}", "") or ""
+        if key.strip():
+            keys.append(key.strip())
+
+    if not keys:
+        try:
+            from django.conf import settings
+            key = getattr(settings, "GEMINI_API_KEY", "") or ""
+            if key.strip():
+                keys.append(key.strip())
+        except Exception:
+            pass
+
+        if not keys:
+            key = os.getenv("GEMINI_API_KEY", "") or ""
+            if key.strip():
+                keys.append(key.strip())
+
+    return keys
+
+
+def count_api_keys() -> int:
+    """Count how many Gemini API keys are configured."""
+    return len(list_api_keys())
+
+
 def resolve_api_key(explicit: str | None = None) -> str:
     """Get API key, preferring key rotation manager for auto load-balancing."""
     if explicit:
         return explicit.strip()
-    
+
     try:
         from ai_engine.gemini.key_manager import get_api_key
         key = get_api_key()
@@ -21,18 +60,12 @@ def resolve_api_key(explicit: str | None = None) -> str:
             return key
     except Exception:
         pass
-    
-    # Fallback to single key from settings/env
-    try:
-        from django.conf import settings
-        key = getattr(settings, "GEMINI_API_KEY", "") or ""
-        if key:
-            return key.strip()
-    except Exception:
-        pass
-    
-    import os
-    return (os.getenv("GEMINI_API_KEY") or "").strip()
+
+    keys = list_api_keys()
+    if keys:
+        return keys[0]
+
+    return ""
 
 
 class GeminiClient:

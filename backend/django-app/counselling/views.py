@@ -56,9 +56,29 @@ class HealthView(APIView):
     permission_classes = []
 
     def get(self, request):
-        from ai_engine.gemini.client import resolve_api_key
+        from ai_engine.gemini.client import resolve_api_key, count_api_keys, GeminiClient
+        from django.conf import settings
 
         key = resolve_api_key()
+        gemini_test_success = False
+        gemini_test_error = None
+        gemini_key_count = count_api_keys()
+        
+        if key:
+            try:
+                client = GeminiClient()
+                # Use a lightweight generate call to test the resolved key and model
+                test_reply = client.generate(
+                    user_message="Say 'OK'",
+                    fallback_text="FAIL"
+                )
+                if test_reply != "FAIL" and "not configured" not in test_reply and "could not reach" not in test_reply:
+                    gemini_test_success = True
+                else:
+                    gemini_test_error = client.last_error or test_reply
+            except Exception as e:
+                gemini_test_error = str(e)
+
         return Response(
             {
                 "status": "ok",
@@ -66,8 +86,13 @@ class HealthView(APIView):
                 "cutoffs": Cutoff.objects.count(),
                 "gemini_configured": bool(key),
                 "gemini_key_preview": f"{key[:8]}..." if len(key) > 8 else None,
+                "gemini_key_count": gemini_key_count,
+                "gemini_test_success": gemini_test_success,
+                "gemini_test_error": gemini_test_error,
+                "gemini_active_model": getattr(settings, "GEMINI_MODEL", "gemini-2.0-flash"),
             }
         )
+
 
 
 class MetaView(APIView):

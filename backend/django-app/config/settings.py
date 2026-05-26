@@ -22,8 +22,13 @@ BACKEND_DIR = BASE_DIR.parent
 sys.path.insert(0, str(ROOT_DIR))
 sys.path.insert(0, str(BACKEND_DIR))
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+# Temporary test fallback: use a direct Gemini key when env vars are not loading.
+# Remove this after deployment verification to avoid hardcoding secrets.
+GEMINI_API_KEY = os.getenv(
+    "GEMINI_API_KEY",
+    "AIzaSyAM0wdCECNcUdk1Fi5FZPGr7KghNNRsekU",
+)
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", os.getenv("GEMINI_ACTIVE_MODEL", "gemini-2.5-flash"))
 CHROMA_PERSIST_DIR = os.getenv("CHROMA_PERSIST_DIR", str(ROOT_DIR / "datasets" / "embeddings"))
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-change-in-production")
