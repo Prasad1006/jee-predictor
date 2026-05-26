@@ -236,11 +236,12 @@ class Command(BaseCommand):
         for _, row in program_keys.iterrows():
             cname = str(row["institute_canonical"]).strip()
             pname = str(row["program_name"]) if pd.notna(row["program_name"]) else "Unknown"
-            branch = str(row["branch_canonical"]) if pd.notna(row["branch_canonical"]) else ""
-            key = (cname, pname, branch)
+            raw_branch = str(row["branch_canonical"]) if pd.notna(row["branch_canonical"]) else ""
+            key = (cname, pname, raw_branch)
             if key not in program_ids:
+                clean_branch = get_correct_branch_canonical(pname)
                 prog = Program.objects.get(
-                    college_id=college_ids[cname], program_name=pname, branch_canonical=branch
+                    college_id=college_ids[cname], program_name=pname, branch_canonical=clean_branch
                 )
                 program_ids[key] = prog.pk
 
