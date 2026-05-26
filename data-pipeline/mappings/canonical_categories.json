@@ -1,0 +1,28 @@
+{
+  "category_mappings": {
+    "GEN": "GENERAL",
+    "GENERAL": "GENERAL",
+    "OPEN": "GENERAL",
+    "OBC": "OBC",
+    "OBC-NCL": "OBC",
+    "OBC-CL": "OBC",
+    "SC": "SC",
+    "ST": "ST",
+    "GEN-PWD": "GENERAL-PWD",
+    "GENERAL-PWD": "GENERAL-PWD",
+    "OBC-PWD": "OBC-PWD",
+    "OBC-NCL-PWD": "OBC-PWD",
+    "SC-PWD": "SC-PWD",
+    "ST-PWD": "ST-PWD",
+    "GEN-EWS": "EWS",
+    "EWS": "EWS",
+    "GEN-EWS-PWD": "EWS-PWD",
+    "EWS-PWD": "EWS-PWD",
+    "OPEN (PwD)": "GENERAL-PWD",
+    "OBC-NCL (PwD)": "OBC-PWD",
+    "SC (PwD)": "SC-PWD",
+    "ST (PwD)": "ST-PWD",
+    "EWS (PwD)": "EWS-PWD"
+  },
+  "description": "Maps all category variations to standardized JOSAA categories"
+}

@@ -1,0 +1,52 @@
+{
+  "total_records": 459407,
+  "checks": {
+    "valid_rank_ranges": {
+      "valid": 459282,
+      "invalid": 125,
+      "percentage_valid": 99.97
+    },
+    "year_range": {
+      "min_year": 2016,
+      "max_year": 2025,
+      "valid_years_count": 459407
+    },
+    "college_match": {
+      "matched": 459407,
+      "unmatched": 0,
+      "percentage_matched": 100.0
+    },
+    "critical_columns_complete_99pct": true,
+    "missing_values": {
+      "program_name": {
+        "count": 1,
+        "percentage": 0.0
+      },
+      "branch_canonical": {
+        "count": 2895,
+        "percentage": 0.63
+      },
+      "category": {
+        "count": 2,
+        "percentage": 0.0
+      },
+      "quota": {
+        "count": 1,
+        "percentage": 0.0
+      },
+      "opening_rank": {
+        "count": 1425,
+        "percentage": 0.31
+      },
+      "closing_rank": {
+        "count": 1426,
+        "percentage": 0.31
+      }
+    }
+  },
+  "quality_gates_passed": {
+    "valid_rank_ranges_99": true,
+    "college_match_95": true,
+    "unmatched_under_100_unique": true
+  }
+}

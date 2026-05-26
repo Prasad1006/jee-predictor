@@ -1,0 +1,19 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+backend/django-app/db.sqlite3
+frontend/node_modules/
+frontend/.next/
+datasets/embeddings/
+*.log
+
+# Large raw & intermediate data files (exceeding Git size limits)
+data-collecting/data_analysis_report.json
+data-collecting/merged_jee_cutoff_2018_2025.csv
+data-pipeline/cleaned-data/
+data-pipeline/normalized-data/merged_cutoffs_normalized.csv
+data-pipeline/normalized-data/data_normalized.csv
+data-pipeline/standardized-data/std_merged_cutoffs.csv
+data-pipeline/standardized-data/std_data.csv

@@ -1,0 +1,18 @@
+{
+  "quota_mappings": {
+    "AI": "ALL_INDIA",
+    "HS": "HOME_STATE",
+    "OS": "OTHER_STATE",
+    "GO": "GOA",
+    "AP": "ANDHRA_PRADESH",
+    "JK": "JAMMU_KASHMIR",
+    "LA": "LADAKH"
+  },
+  "quota_to_state": {
+    "GO": "Goa",
+    "AP": "Andhra Pradesh",
+    "JK": "Jammu & Kashmir",
+    "LA": "Ladakh"
+  },
+  "description": "Maps quota abbreviations to standardized names. HS and OS refer to candidate's home state and other states respectively"
+}

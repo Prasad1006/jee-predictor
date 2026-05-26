@@ -1,0 +1,209 @@
+{
+  "iit bombay": {
+    "tier": "Tier 1",
+    "coding_score": 9.9,
+    "placement_score": 9.9,
+    "roi_score": 9.2,
+    "reputation_score": 9.9,
+    "alumni_score": 9.9,
+    "campus_score": 9.5
+  },
+  "iit delhi": {
+    "tier": "Tier 1",
+    "coding_score": 9.8,
+    "placement_score": 9.8,
+    "roi_score": 9.1,
+    "reputation_score": 9.8,
+    "alumni_score": 9.8,
+    "campus_score": 9.4
+  },
+  "iit madras": {
+    "tier": "Tier 1",
+    "coding_score": 9.7,
+    "placement_score": 9.7,
+    "roi_score": 9.0,
+    "reputation_score": 9.8,
+    "alumni_score": 9.7,
+    "campus_score": 9.5
+  },
+  "iit kanpur": {
+    "tier": "Tier 1",
+    "coding_score": 9.8,
+    "placement_score": 9.6,
+    "roi_score": 9.1,
+    "reputation_score": 9.7,
+    "alumni_score": 9.7,
+    "campus_score": 9.2
+  },
+  "iit kharagpur": {
+    "tier": "Tier 1",
+    "coding_score": 9.6,
+    "placement_score": 9.5,
+    "roi_score": 8.9,
+    "reputation_score": 9.6,
+    "alumni_score": 9.8,
+    "campus_score": 9.3
+  },
+  "iit roorkee": {
+    "tier": "Tier 1",
+    "coding_score": 9.5,
+    "placement_score": 9.4,
+    "roi_score": 8.8,
+    "reputation_score": 9.5,
+    "alumni_score": 9.5,
+    "campus_score": 9.4
+  },
+  "iit guwahati": {
+    "tier": "Tier 1",
+    "coding_score": 9.4,
+    "placement_score": 9.4,
+    "roi_score": 8.7,
+    "reputation_score": 9.4,
+    "alumni_score": 9.3,
+    "campus_score": 9.6
+  },
+  "iit hyderabad": {
+    "tier": "Tier 1",
+    "coding_score": 9.5,
+    "placement_score": 9.3,
+    "roi_score": 8.5,
+    "reputation_score": 9.2,
+    "alumni_score": 8.8,
+    "campus_score": 9.1
+  },
+  "nit trichy": {
+    "tier": "Tier 1",
+    "coding_score": 9.4,
+    "placement_score": 9.5,
+    "roi_score": 9.2,
+    "reputation_score": 9.4,
+    "alumni_score": 9.4,
+    "campus_score": 8.8
+  },
+  "nit surathkal": {
+    "tier": "Tier 1",
+    "coding_score": 9.3,
+    "placement_score": 9.4,
+    "roi_score": 9.1,
+    "reputation_score": 9.3,
+    "alumni_score": 9.3,
+    "campus_score": 9.0
+  },
+  "nit warangal": {
+    "tier": "Tier 1",
+    "coding_score": 9.3,
+    "placement_score": 9.3,
+    "roi_score": 9.0,
+    "reputation_score": 9.2,
+    "alumni_score": 9.3,
+    "campus_score": 8.7
+  },
+  "iiit hyderabad": {
+    "tier": "Tier 1",
+    "coding_score": 9.9,
+    "placement_score": 9.8,
+    "roi_score": 8.2,
+    "reputation_score": 9.6,
+    "alumni_score": 9.2,
+    "campus_score": 8.0
+  },
+  "iiit allahabad": {
+    "tier": "Tier 1",
+    "coding_score": 9.6,
+    "placement_score": 9.6,
+    "roi_score": 9.3,
+    "reputation_score": 9.1,
+    "alumni_score": 9.0,
+    "campus_score": 8.2
+  },
+  "iiit bangalore": {
+    "tier": "Tier 1",
+    "coding_score": 9.5,
+    "placement_score": 9.5,
+    "roi_score": 8.0,
+    "reputation_score": 9.0,
+    "alumni_score": 8.8,
+    "campus_score": 7.8
+  },
+  "iiit delhi": {
+    "tier": "Tier 1",
+    "coding_score": 9.4,
+    "placement_score": 9.3,
+    "roi_score": 7.9,
+    "reputation_score": 8.9,
+    "alumni_score": 8.6,
+    "campus_score": 8.2
+  },
+  "iiit lucknow": {
+    "tier": "Tier 2",
+    "coding_score": 9.2,
+    "placement_score": 9.3,
+    "roi_score": 8.5,
+    "reputation_score": 8.2,
+    "alumni_score": 8.0,
+    "campus_score": 7.5
+  },
+  "nit kurukshetra": {
+    "tier": "Tier 2",
+    "coding_score": 8.7,
+    "placement_score": 8.8,
+    "roi_score": 8.6,
+    "reputation_score": 8.5,
+    "alumni_score": 8.8,
+    "campus_score": 8.3
+  },
+  "nit jaipur": {
+    "tier": "Tier 2",
+    "coding_score": 8.8,
+    "placement_score": 8.9,
+    "roi_score": 8.7,
+    "reputation_score": 8.6,
+    "alumni_score": 8.9,
+    "campus_score": 8.5
+  },
+  "nit calicut": {
+    "tier": "Tier 1",
+    "coding_score": 9.0,
+    "placement_score": 9.1,
+    "roi_score": 8.9,
+    "reputation_score": 8.9,
+    "alumni_score": 9.0,
+    "campus_score": 8.6
+  },
+  "nit rourkela": {
+    "tier": "Tier 1",
+    "coding_score": 8.9,
+    "placement_score": 9.0,
+    "roi_score": 8.8,
+    "reputation_score": 9.0,
+    "alumni_score": 9.0,
+    "campus_score": 8.9
+  },
+  "nit bhopal": {
+    "tier": "Tier 2",
+    "coding_score": 8.6,
+    "placement_score": 8.7,
+    "roi_score": 8.5,
+    "reputation_score": 8.4,
+    "alumni_score": 8.7,
+    "campus_score": 8.4
+  },
+  "nit andhra pradesh": {
+    "tier": "Tier 3",
+    "coding_score": 7.8,
+    "placement_score": 8.0,
+    "roi_score": 8.0,
+    "reputation_score": 7.8,
+    "alumni_score": 7.5,
+    "campus_score": 8.2
+  },
+  "iiit sri city": {
+    "tier": "Tier 2",
+    "coding_score": 8.6,
+    "placement_score": 8.4,
+    "roi_score": 8.2,
+    "reputation_score": 8.0,
+    "alumni_score": 8.1,
+    "campus_score": 8.3
+  }
+}

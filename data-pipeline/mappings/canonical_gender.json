@@ -1,0 +1,22 @@
+{
+  "gender_mappings": {
+    "Gender-Neutral": "GENDER_NEUTRAL",
+    "GENDER_NEUTRAL": "GENDER_NEUTRAL",
+    "gender-neutral": "GENDER_NEUTRAL",
+    "Female-only": "FEMALE_ONLY",
+    "Female-only (including Supernumerary)": "FEMALE_ONLY",
+    "FEMALE_ONLY": "FEMALE_ONLY",
+    "female-only": "FEMALE_ONLY",
+    "F": "FEMALE_ONLY",
+    "f": "FEMALE_ONLY",
+    "FEMALE": "FEMALE_ONLY",
+    "Female": "FEMALE_ONLY",
+    "M": "MALE",
+    "m": "MALE",
+    "MALE": "MALE",
+    "Male": "MALE",
+    "male": "MALE"
+  },
+  "default": "GENDER_NEUTRAL",
+  "description": "Maps gender variations to standardized values. NaN defaults to GENDER_NEUTRAL"
+}
