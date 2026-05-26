@@ -318,7 +318,9 @@ export function CounsellingWorkspace() {
           : undefined,
       });
       setMessages([...nextHistory, { role: "model", content: res.reply, verified_cards: res.verified_cards }]);
+      console.log("Counselling Copilot Context Used:", res.context_used);
       if (res.preference_list) {
+
         setPreferenceList(res.preference_list);
         setShowPreferences(true);
       }
